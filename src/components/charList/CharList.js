@@ -30,9 +30,9 @@ class CharList extends Component {
 
     componentDidMount() {
         this.marvelService
-        .getAllCharacters()
-        .then(this.onCharLoaded)
-        .catch(this.onError)
+            .getAllCharacters()
+            .then(this.onCharLoaded)
+            .catch(this.onError)
     }
 
     onError = () => {

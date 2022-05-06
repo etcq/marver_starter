@@ -56,7 +56,7 @@ class CharInfo extends Component {
             error: true
         })
     }
-   
+    
 
     render() {
         const {char, loading, error} = this.state;
