@@ -46,7 +46,10 @@ class CharList extends Component {
         const charCard = arr.map(({id, name, thumbnail}) => {
             const objFit = thumbnail.includes('image_not_available');
             return (
-                <li className="char__item char__item_selected" key={id}>
+                <li 
+                    className="char__item" 
+                    key={id}
+                    onClick={() => this.props.onCharSelected(id)}>
                     <img src={thumbnail} alt={name} style={objFit ? {objectFit: "contain"} : null}/>
                     <div className="char__name">{name}</div>
                 </li>
