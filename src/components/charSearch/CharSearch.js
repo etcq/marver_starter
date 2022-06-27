@@ -6,12 +6,10 @@ import { Link } from 'react-router-dom';
 
 import * as Yup from 'yup';
 
-
-
 const CharSearch = () => {
 
     const [char, setChar] = useState(null);
-    const {loading, error, clearError, getCharacterByName} = useMarvelService();
+    const {loading, error, clearError, getCharacterByName, process, setProcess} = useMarvelService();
 
     const characterLoaded = (char) => {
         setChar(char);
@@ -49,7 +47,7 @@ const CharSearch = () => {
                 onSubmit={({name}) => updateCharacter(name)}>
                 <Form>
                     <Field type="text" name="name" className="char__input" placeholder='Enter name'/>
-                    <button type="submit" className="button button__main" disabled={loading}>
+                    <button type="submit" className="button button__main" disabled={process === 'loading'}>
                         <div className="inner">Find</div>
                     </button>
                     <ErrorMessage className="error" name="name" component="div"/>
